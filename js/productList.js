@@ -8,7 +8,9 @@ export default function renderProducts(products){
         productDiv.className = "product";
         productDiv.innerHTML = `
             <h3>${product.nombre}</h3>
-            <img src="${product.imagen}" alt="${product.nombre}">
+            <div class="image-container">
+                <img src="${product.imagen}" alt="${product.nombre}">
+            </div>
             <p class="description">${product.descripcion}</p>
             <p>$${product.precio.toFixed(2)}</p>
             <button class="add-to-cart-btn" data-id="${product.id}">Agregar al carrito</button>
