@@ -1,10 +1,10 @@
 const d = document;
 
-import renderProducts from "/js/productList.js";
+import renderProducts from "./productList.js";
 import { initCart } from "./cart.js";
 
 d.addEventListener("DOMContentLoaded", () => {
-    fetch("../data/productos.json")
+    fetch("./data/productos.json")
         .then(response => response.json())
         .then(products => {
             renderProducts(products);
