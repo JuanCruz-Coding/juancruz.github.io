@@ -26,5 +26,33 @@
         "precio": 35.00,
         "imagen": "img/producto3.jpg",
         "descripcion": "Auriculares inalámbricos con sonido de alta fidelidad."
+    },
+    {
+        "id": 2,
+        "nombre": "Bolso de cuero",
+        "precio": 75.50,
+        "imagen": "img/producto2.jpg",
+        "descripcion": "Un bolso elegante y espacioso para cualquier ocasión."
+    },
+    {
+        "id": 2,
+        "nombre": "Bolso de cuero",
+        "precio": 75.50,
+        "imagen": "img/producto2.jpg",
+        "descripcion": "Un bolso elegante y espacioso para cualquier ocasión."
+    },
+    {
+        "id": 1,
+        "nombre": "Zapatos deportivos",
+        "precio": 50.00,
+        "imagen": "img/producto1.jpg",
+        "descripcion": "Zapatos cómodos para correr o usar a diario."
+    },
+    {
+        "id": 1,
+        "nombre": "Zapatos deportivos",
+        "precio": 50.00,
+        "imagen": "img/producto1.jpg",
+        "descripcion": "Zapatos cómodos para correr o usar a diario."
     }
 ]

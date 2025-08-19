@@ -8,31 +8,70 @@
   </head>
   <body>
     <div class="container">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-             <div class="cart-icon" id="cart-icon">🛒 <span id="cart-count">0</span></div>
-        </header>
-        
-        <main id="product-list"></main>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#product-list">Productos</a></li>
+            <li><a href="#contact-form-section">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="cart-icon" id="cart-icon">
+          🛒 <span id="cart-count">0</span>
+        </div>
+      </header>
 
-    <aside class="cart-sidebar" id="cart-sidebar">
-      <button class="close-btn" id="close-cart-btn">❌</button>
-      <h2>Carrito de Compras</h2>
-      <ul id="cart-items-list"></ul>
-      <p>Total: $<span id="cart-total">0.00</span></p>
-      <a href="#" class="checkout-btn" id="checkout-btn">Realizar Pedido</a>
-      <button id="clear-cart-btn">Vaciar Carrito</button>
-    </aside>
-        
-        <footer>
-            <p>&copy; 2025 Mi Tienda Online</p>
-        </footer>
+      <main id="product-list"></main>
+      <section id="about">
+        <h2>Hacemos pedidos personalizados</h2>
+        <p>
+          Si tienes un diseño en mente o necesitas algo específico, no dudes en
+          contactarnos. Estamos aquí para ayudarte a crear el producto perfecto para vos. 
+        </p>
+      </section>
+      <section id="contact-form-section">
+        <h2>Contáctanos</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </section>
+
+      <aside class="cart-sidebar" id="cart-sidebar">
+        <button class="close-btn" id="close-cart-btn">❌</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items-list"></ul>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+        <a href="#" class="checkout-btn" id="checkout-btn">Realizar Pedido</a>
+        <button id="clear-cart-btn">Vaciar Carrito</button>
+      </aside>
+
+      <a
+        href="https://wa.me/5493412550031"
+        class="whatsapp-icon"
+        target="_blank"
+      >
+        <img
+          src="./icons/whatsapp.png"
+          alt="Icono de WhatsApp"
+          style="width: 30px; height: 30px"
+        />
+      </a>
+
+      <footer>
+        <p>&copy; 2025 Mi Tienda Online. Todos los derechos reservados.</p>
+      </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="js/main.js"></script>

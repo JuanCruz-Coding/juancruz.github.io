@@ -6,6 +6,10 @@
     --color-light: #ffffff; /* Blanco */
 }
 
+*{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--color-background);
@@ -208,3 +212,84 @@ button:hover {
     display: block;
 }
 
+#contact-form-section {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: var(--color-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#contact-form-section h2 {
+    color: var(--color-secondary);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left; /* Alinea las etiquetas a la izquierda */
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    outline: none; /* Elimina el contorno azul al hacer clic */
+}
+
+#contact-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button[type="submit"]:hover {
+    background-color: var(--color-secondary);
+}
+
+.whatsapp-icon {
+    position: fixed; /* Lo fija en la pantalla */
+    bottom: 20px;    /* Lo coloca a 20px del borde inferior */
+    right: 20px;     /* Lo coloca a 20px del borde derecho */
+    z-index: 999;    /* Asegura que esté por encima de otros elementos */
+    background-color: #25d366; /* Color de fondo de WhatsApp */
+    color: white;    /* Color del icono */
+    border-radius: 50%; /* Lo hace circular */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1); /* Agranda el icono al pasar el cursor */
+}
