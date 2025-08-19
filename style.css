@@ -1,0 +1,231 @@
+:root {
+    --color-primary: #3498db; /* Azul primario */
+    --color-secondary: #2980b9; /* Azul más oscuro */
+    --color-background: #ecf0f1; /* Gris claro, casi blanco */
+    --color-text: #34495e; /* Gris oscuro para el texto */
+    --color-light: #ffffff; /* Blanco */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+header {
+    background-color: var(--color-light);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 500;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li a {
+    text-decoration: none;
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+nav li a:hover {
+    color: var(--color-primary);
+}
+
+.cart-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    transition: color 0.3s ease;
+}
+
+.cart-icon:hover {
+    color: var(--color-primary);
+}
+
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product {
+    background-color: var(--color-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product h3 {
+    color: var(--color-secondary);
+    margin-top: 0;
+}
+
+.product .description {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.product .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin: 1rem 0;
+}
+
+button {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+}
+
+#clear-cart-btn {
+    background-color: #e74c3c; /* Rojo para alertar */
+}
+
+#clear-cart-btn:hover {
+    background-color: #c0392b; /* Rojo más oscuro */
+}
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: var(--color-light);
+    box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.cart-sidebar.show {
+    transform: translateX(0);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.cart-item button {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+#cart-total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+}
+
+
+/* --- Estilos para móviles (cuando la pantalla es pequeña) --- */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    /* Mostrar el menú de hamburguesa */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Ocultar el menú de navegación */
+    #main-nav {
+        display: none;
+        width: 100%; /* Ocupa todo el ancho */
+        margin-top: 1rem;
+        background-color: var(--color-light);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    #main-nav.active {
+        display: block; /* Cuando tenga la clase 'active', se mostrará */
+    }
+
+    #main-nav ul {
+        flex-direction: column; /* Apila los elementos del menú */
+        align-items: center;
+    }
+    
+    #main-nav li {
+        margin: 0.5rem 0;
+    }
+    
+    /* El ícono del carrito se mueve para que esté al lado del logo */
+    .cart-icon {
+        position: static;
+        margin-left: auto; /* Empuja el ícono a la derecha */
+        margin-right: 1rem;
+    }
+    
+    /* Estilos para el ícono de hamburguesa al abrir */
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
