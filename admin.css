@@ -1,0 +1,156 @@
+body {
+    background-color: #f4f7f9;
+}
+
+/* En tu admin.css */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+#logout-btn {
+    background-color: transparent;
+    border: 2px solid var(--color-light);
+    color: var(--color-light);
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#logout-btn:hover {
+    background-color: var(--color-light);
+    color: var(--color-primary);
+}
+
+#add-product-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--color-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#add-product-section h2 {
+    text-align: center;
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+}
+
+#product-form div {
+    margin-bottom: 1rem;
+}
+
+#product-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+#product-form input[type="text"],
+#product-form input[type="number"],
+#product-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+#product-form input[type="text"]:focus,
+#product-form input[type="number"]:focus,
+#product-form textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+#add-product-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-product-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+#product-list-section h2 {
+    color: var(--color-secondary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse; /* Para que las celdas se vean como una sola */
+    background-color: var(--color-light);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    border: 1px solid #e0e6ed;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    font-weight: bold;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Color para filas pares */
+}
+
+.admin-table tr:hover {
+    background-color: #f1f1f1; /* Efecto al pasar el mouse */
+}
+
+.table-image {
+    width: 80px; /* Tamaño más pequeño para la imagen en la tabla */
+    height: auto;
+    border-radius: 4px;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.product-actions button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+.edit-btn {
+    background-color: #f39c12; /* Naranja para editar */
+}
+
+.edit-btn:hover {
+    background-color: #e67e22;
+}
+
+.delete-btn {
+    background-color: #e74c3c; /* Rojo para eliminar */
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+

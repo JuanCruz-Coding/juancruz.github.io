@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f7f9;
+      }
+      .login-container {
+        max-width: 400px;
+        padding: 2rem;
+        background-color: var(--color-light);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .login-container h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--color-secondary);
+      }
+      .login-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .login-container button {
+        width: 100%;
+        padding: 12px;
+        background-color: var(--color-primary);
+        color: var(--color-light);
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1em;
+        cursor: pointer;
+      }
+      .login-container button:hover {
+        background-color: var(--color-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Iniciar Sesión</h1>
+      <form id="login-form">
+        <input
+          type="email"
+          id="email"
+          placeholder="Correo electrónico"
+          required
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Contraseña"
+          required
+        />
+        <button type="submit">Acceder</button>
+      </form>
+      <p
+        id="error-message"
+        style="color: red; text-align: center; margin-top: 1rem"
+      ></p>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>

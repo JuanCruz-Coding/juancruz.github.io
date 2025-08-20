@@ -1,3 +1,5 @@
+// js/cart.js
+
 import { renderCart } from "./cartUI.js";
 
 // Este array guardará los productos del carrito.
@@ -28,21 +30,21 @@ function addToCart(product) {
       cart.push(product);
     }
     
-const Toast = Swal.mixin({
-  toast: true,
-  position: "bottom-end",
-  showConfirmButton: false,
-  timer: 1000,
-  timerProgressBar: true,
-  didOpen: (toast) => {
-    toast.onmouseenter = Swal.stopTimer;
-    toast.onmouseleave = Swal.resumeTimer;
-  }
-});
-Toast.fire({
-  icon: "success",
-  title: "Producto añadido al carrito"
-});
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "bottom-end",
+      showConfirmButton: false,
+      timer: 1000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    Toast.fire({
+      icon: "success",
+      title: "Producto añadido al carrito"
+    });
 
     console.log(`¡${product.nombre} añadido al carrito!`);
     displayCart();
@@ -52,7 +54,7 @@ Toast.fire({
 
 /**
  * Elimina un producto del carrito.
- * @param {number} productId - El ID del producto a eliminar.
+ * @param {string} productId - El ID del producto a eliminar (ahora un string).
  */
 function removeFromCart(productId) {
   // 1. Busca el índice del producto en el array del carrito
@@ -98,7 +100,7 @@ const checkoutBtn = document.getElementById("checkout-btn");
 function generateWhatsAppMessage() {
   // Si el carrito está vacío, no generamos el mensaje.
   if (cart.length === 0) {
-      // Evita que el enlace se abra automáticamente
+    // Evita que el enlace se abra automáticamente
     event.preventDefault();
 
     Swal.fire({
@@ -135,7 +137,7 @@ function generateWhatsAppMessage() {
   const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
    // Abre la URL en una nueva pestaña.
-    window.open(whatsappURL, '_blank');
+   window.open(whatsappURL, '_blank');
 
   // Actualiza el atributo 'href' del enlace
   checkoutBtn.href = whatsappURL;
@@ -149,7 +151,9 @@ export function initCart(products) {
 
   addToCartButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
-      const productId = parseInt(event.target.dataset.id);
+      // **CAMBIO IMPORTANTE AQUÍ**
+      // Obtén el ID como un string, no como un número.
+      const productId = event.target.dataset.id;
 
       // Usamos .find() para encontrar el producto en la lista original.
       const productToAdd = products.find((product) => product.id === productId);
@@ -165,8 +169,8 @@ export function initCart(products) {
   cartItemsList.addEventListener("click", (event) => {
     // Verifica si el clic fue en un botón de eliminar
     if (event.target.classList.contains("remove-from-cart-btn")) {
-      // Obtiene el ID del producto del atributo de datos
-      const productId = parseInt(event.target.dataset.id);
+      // Obtiene el ID del producto como un string
+      const productId = event.target.dataset.id;
       // Llama a la función para eliminar el producto
       removeFromCart(productId);
     }
