@@ -96,7 +96,7 @@ function clearCart() {
 
 const checkoutBtn = document.getElementById("checkout-btn");
 
-function generateWhatsAppMessage() {
+function generateWhatsAppMessage(event) {
   event.preventDefault();
     if (cart.length === 0) {
         Swal.fire({
