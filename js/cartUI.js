@@ -1,49 +1,40 @@
-const cartCountSpan = document.getElementById("cart-count");
+// js/cartUI.js
 
 /**
- * Actualiza el contador del carrito en el icono del header.
- * @param {Array<object>} cartItems - El array de productos en el carrito.
+ * Renderiza la lista de productos en el carrito.
+ * @param {Array<object>} cart - El array de productos en el carrito.
  */
-function updateCartCount(cartItems) {
-    let totalItems = 0;
-    cartItems.forEach(item => {
-        totalItems += item.cantidad;
-    });
-    cartCountSpan.textContent = totalItems;
-}
-
-/**
- * Renderiza el contenido del carrito en la interfaz de usuario.
- * @param {Array<object>} cartItems - El array de productos en el carrito.
- */
-export function renderCart(cartItems) {
+export function renderCart(cart) {
     const cartItemsList = document.getElementById("cart-items-list");
-    const cartTotalSpan = document.getElementById("cart-total");
-
-    // 1. Limpia el contenido actual del carrito para evitar duplicados.
-    cartItemsList.innerHTML = "";
+    const cartTotalPrice = document.getElementById("cart-total-price");
     
-    // Variable para calcular el total
-    let total = 0;
+    // Limpia la lista antes de renderizar
+    cartItemsList.innerHTML = "";
 
-    // 2. Itera sobre los productos del carrito
-    cartItems.forEach(item => {
-        // Crea un elemento de lista para cada producto
-        const cartItemEl = document.createElement("li");
-        cartItemEl.classList.add("cart-item");
-        cartItemEl.innerHTML = `
-            <span>${item.nombre}</span>
-            <span>$${(item.precio * item.cantidad).toFixed(2)}</span>
-            <button class="remove-from-cart-btn" data-id="${item.id}">Eliminar</button>
-        `;
-        cartItemsList.appendChild(cartItemEl);
+    let totalPrice = 0;
 
-        // 3. Suma el precio de cada producto al total
-        total += item.precio * item.cantidad;
-    });
+    if (cart.length === 0) {
+        cartItemsList.innerHTML = `<p class="text-center text-muted">El carrito está vacío.</p>`;
+    } else {
+        cart.forEach((item) => {
+            const li = document.createElement("li");
+            li.classList.add("cart-item");
+            li.innerHTML = `
+                <img src="${item.imagen}" alt="${item.nombre}">
+                <div class="item-info">
+                    <p class="item-name">${item.nombre}</p>
+                    <p class="item-quantity">Cantidad: ${item.cantidad}</p>
+                    <p class="item-price">$${(item.precio * item.cantidad).toFixed(2)}</p>
+                </div>
+                <button class="remove-from-cart-btn btn btn-sm btn-danger" data-id="${item.id}">X</button>
+            `;
+            cartItemsList.appendChild(li);
+            totalPrice += item.precio * item.cantidad;
+        });
+    }
 
-    // 4. Actualiza el total en el HTML
-    cartTotalSpan.textContent = total.toFixed(2);
-    updateCartCount(cartItems);
+    // Asegúrate de que este elemento exista en tu HTML
+    if (cartTotalPrice) {
+        cartTotalPrice.textContent = `Total: $${totalPrice.toFixed(2)}`;
+    }
 }
-

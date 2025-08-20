@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel de Administración</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="admin.css" />
   </head>
@@ -16,27 +19,91 @@
         <button id="logout-btn">Cerrar Sesión</button>
       </header>
 
-      <section id="add-product-section">
-        <h2>Agregar Nuevo Producto</h2>
-        <form id="product-form">
-          <div>
-            <label for="product-name">Nombre del Producto:</label>
-            <input type="text" id="product-name" required />
+      <section id="add-product-section" class="container text-center">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#productModal"
+        >
+          Agregar Nuevo Producto
+        </button>
+
+        <div
+          class="modal fade"
+          id="productModal"
+          tabindex="-1"
+          aria-labelledby="productModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">
+                  Agregar Producto
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="product-form">
+                  <div>
+                    <label for="product-name" class="form-label"
+                      >Nombre del Producto</label
+                    >
+                    <input
+                      type="text"
+                      id="product-name"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="product-price" class="form-label">Precio</label>
+                    <input
+                      type="number"
+                      id="product-price"
+                      class="form-control"
+                      step="0.01"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="product-description" class="form-label"
+                      >Descripción</label
+                    >
+                    <textarea
+                      id="product-description"
+                      class="form-control"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <div>
+                    <label for="product-image" class="form-label">Imagen</label>
+                    <input
+                      type="file"
+                      id="product-image"
+                      class="form-control"
+                      accept="image/*"
+                    />
+                  </div>
+                  <hr />
+                  <button
+                    type="submit"
+                    id="add-product-btn"
+                    class="btn btn-success w-100"
+                  >
+                    Agregar Producto
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
-          <div>
-            <label for="product-price">Precio:</label>
-            <input type="number" id="product-price" step="0.01" required />
-          </div>
-          <div>
-            <label for="product-image">Subir Imagen:</label>
-            <input type="file" id="product-image" accept="image/*" />
-          </div>
-          <div>
-            <label for="product-description">Descripción:</label>
-            <textarea id="product-description" required></textarea>
-          </div>
-          <button type="submit" id="add-product-btn">Agregar Producto</button>
-        </form>
+        </div>
       </section>
 
       <section id="product-list-section">

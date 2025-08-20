@@ -31,7 +31,7 @@
         </div>
       </header>
 
-      <main id="product-list"></main>
+      <main id="product-list" class="container d-flex flex-wrap justify-content-center"></main>
       <section id="about">
         <h2>Hacemos pedidos personalizados</h2>
         <p>
@@ -59,14 +59,27 @@
         </form>
       </section>
 
-      <aside class="cart-sidebar" id="cart-sidebar">
-        <button class="close-btn" id="close-cart-btn">❌</button>
-        <h2>Carrito de Compras</h2>
-        <ul id="cart-items-list"></ul>
-        <p>Total: $<span id="cart-total">0.00</span></p>
-        <a href="#" class="checkout-btn" id="checkout-btn">Realizar Pedido</a>
-        <button id="clear-cart-btn">Vaciar Carrito</button>
-      </aside>
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-end">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items-list">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <p id="cart-total-price">Total: $0.00</p>
+                <div class="cart-actions">
+                    <button id="clear-cart-btn" class="btn btn-warning">Vaciar Carrito</button>
+                    <a href="#" id="checkout-btn" class="btn btn-success">Realizar Pedido</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
       <a
         href="https://wa.me/5493412550031"
