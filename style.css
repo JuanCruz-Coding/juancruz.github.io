@@ -54,9 +54,6 @@ nav li a:hover {
 }
 
 .cart-icon {
-    position: absolute;
-    top: 1.5rem;
-    right: 2rem;
     cursor: pointer;
     font-size: 1.5rem;
     color: var(--color-secondary);
@@ -67,7 +64,7 @@ nav li a:hover {
     color: var(--color-primary);
 }
 
-#product-list {
+ #product-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
@@ -81,8 +78,6 @@ nav li a:hover {
     padding: 1.5rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 400px;
-    height: 600px;
 }
 
 .product:hover {
@@ -141,11 +136,12 @@ button:hover {
 .image-container:hover img {
     transform: scale(1.1);
 }
+
 .image-container img {
     width: 100%;
     height: auto;
     display: block;
-}
+} 
 
 #contact-form-section {
     max-width: 600px;
