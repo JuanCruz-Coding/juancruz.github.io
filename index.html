@@ -6,6 +6,7 @@
     <title>Tienda Online</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
 
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
@@ -17,19 +18,36 @@
       <div id="loader-container">
         <div class="spinner"></div>
       </div>
-      <header>
-        <nav>
-          <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#product-list">Productos</a></li>
-            <li><a href="#contact-form-section">Contacto</a></li>
-            <li><a href="login.html">Admin</a></li>
-          </ul>
-        </nav>
-        <div class="cart-icon" id="cart-icon">
-          🛒 <span id="cart-count">0</span>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">Mi Tienda Online</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#product-list">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-form-section">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Admin</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cart-icon d-flex align-items-center ms-3" id="cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+                <span id="cart-count" class="badge bg-danger rounded-pill ms-1">0</span>
+            </div>
         </div>
-      </header>
+    </nav>
+</header>
 
       <main id="product-list" class="container d-flex flex-wrap justify-content-center"></main>
       <section id="about">
